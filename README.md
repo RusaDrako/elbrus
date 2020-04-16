@@ -1,12 +1,12 @@
 # Framework Elbrus
 ____
-<p align="center">
+
 ![Framework Elbrus](https://raw.githubusercontent.com/RusaDrako/elbrus/master/public/img/elbrus_logo.png "Framework Elbrus")
 <br>
 <br>
 ![license](https://img.shields.io/github/license/RusaDrako/elbrus?style=plastic)
 ![release](https://img.shields.io/github/v/release/RusaDrako/elbrus?style=plastic)
-</p>
+
 
 ## Оглавление
 
