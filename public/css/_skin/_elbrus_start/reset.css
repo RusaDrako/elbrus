@@ -1,0 +1,235 @@
+/*----reset----*/
+
+html {
+	height: 100%;
+}
+
+
+body {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	color: #000;
+	background: #fff;
+	font-family: arial;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+div {
+/*	position: relative;*/
+	left: auto;
+	right: auto;
+	top: auto;
+	bottom: auto;
+	width: auto;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	border: 0px solid #999;
+	border-radius: 0;
+	text-align: justify;
+	text-indent: 0;
+	box-sizing: border-box;
+
+}
+
+
+a {
+	color: #036;
+/*	text-decoration: none;*/
+}
+
+a:hover {
+	color: #840;
+}
+
+img {
+	border: 0 solid #aaa;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 5px 0;
+	color: #036;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 190%;
+}
+
+h2 {
+	font-size: 175%;
+}
+
+h3 {
+	font-size: 160%;
+}
+
+h4 {
+	font-size: 145%;
+}
+
+h5 {
+	font-size: 130%;
+}
+
+h6 {
+	font-size: 115%;
+}
+
+ul, ol {
+	margin: 0px;
+	margin-left: 5px;
+	list-style-type: circle;
+	padding: 0;
+}
+
+li {
+	margin: 0px;
+	margin-left: 15px;
+	padding: 0;
+}
+
+p,
+form {
+	margin: 0;
+}
+
+input,
+textarea,
+select,
+button {
+	display: block;
+	width: 100%;
+	height: 25px;
+	padding: 0px 3px;
+	margin: 2px auto;
+	color: #000;
+	border: 2px solid #ddd;
+	border-radius: 5px;
+/*	font-size: 12px;*/
+	resize: none;
+	box-sizing: border-box;
+}
+
+textarea {
+	min-height: 150px;
+	max-width: 100%;
+	min-width: 100%;
+}
+
+select[multiple] {
+	height: 75px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline;
+	width: 14px;
+	height: 14px;
+	margin: 2px 0;
+}
+
+input[type='file'] {
+	border-radius: 0;
+	border-width: 0;
+}
+
+input[type="image"] {
+	width: auto;
+	height: auto;
+}
+
+button,
+input[type='submit'] {
+	width: 180px;
+	height: 30px;
+/*	font-size: 12px;*/
+	font-weight: bold;
+	text-align: center;
+	color: #009;
+	background: linear-gradient(to top, #eee, #ccc);
+}
+
+button:hover,
+input[type='submit']:hover {
+	color: #700;
+	background: linear-gradient(to top, #eee, #aaa);
+}
+
+input[type=submit]:disabled,
+input[type=submit]:disabled:hover {
+	color: #700;
+	background: linear-gradient(to top, #fee, #faa);
+}
+
+
+
+table, tr, td {
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+	font-size: 12px;
+/*	border: 1px solid;*/
+}
+
+table {
+	width: 100%;
+	margin: 5px auto;
+	background: #888;
+	box-sizing: border-box;
+}
+
+caption {
+	font-weight: bold;
+}
+
+thead th {
+/*	font-size: 12px;*/
+	background: #ccc;
+}
+
+tr {
+	background: #fff;
+}
+
+tr:nth-child(even) {
+	background: #eff;
+}
+
+td, th {
+	position: relative;
+	padding: 1px 5px;
+}
+
+
+td .image{
+	position: relative;
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin-right: 5px;
+}
+
+td .image img{
+	position: absolute;
+	margin: auto;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	border-radius: 0;
+	z-index: 0;
+}
+
+
+
+
+
+.clear {
+	clear: both;
+}
+
+/*----reset----*/
