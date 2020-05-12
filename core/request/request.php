@@ -76,6 +76,30 @@ class request {
 
 
 
+	/** Получаем данные о методе */
+	private function _set_method() {
+		$this->_request['sys_method'] = 'GET';
+		# При запуске через сервер
+		if (isset($_SERVER['REQUEST_METHOD'])) {
+			$this->_request['sys_method'] = explode('?',$_SERVER['REQUEST_METHOD'])[0];
+		# При запуске через командную строку
+		} else {
+			foreach ($_SERVER['argv'] as $arg ) {
+				if (strpos($arg ,'=')) {
+					list ($key, $val ) = explode("=", $arg);
+					if ($key == 'sys_method') {
+						$this->_request['sys_method'] = $val;
+						break;
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+
 	/** Получаем данные запроса */
 	private function _set_request() {
 		# При запуске через сервер

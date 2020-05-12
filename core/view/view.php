@@ -1,6 +1,6 @@
 <?php
 
-require_once ('_abs/abs_type.php');
+require_once ('_abs/abs_adapter.php');
 
 
 
