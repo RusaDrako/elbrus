@@ -96,7 +96,7 @@ class registry {
 	/** Заполняет/обновляет ключ регистра
 	 * @param string $key Ключ регистра
 	 * @param string/bool/int $value Значение регистра
-	 * @param bool $lock Ключ регистра
+	 * @param bool $lock Блокировка ключа регистра
 	 * @return bool true - успешно, false - ошибка
 	 */
 	public function set($key, $value, $lock = false) {

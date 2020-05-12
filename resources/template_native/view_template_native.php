@@ -10,7 +10,7 @@ namespace resources\template_native;
  * @author Петухов Леонид <l.petuhov@okonti.ru>
  * @package core
  */
-class view_template_native extends \core\view\_abs\abs_type {
+class view_template_native extends \core\view\_abs\abs_adapter {
 	/** Расширение шаблона */
 	protected $_extension = '.php';
 	/** Шаблон открывающей части */

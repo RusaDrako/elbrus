@@ -10,7 +10,7 @@ namespace core\view\_abs;
  * @author Петухов Леонид <l.petuhov@okonti.ru>
  * @package core
  */
-abstract class abs_type {
+abstract class abs_adapter {
 	/** Расширение шаблона */
 	protected $_extension = '.tpl';
 	/** Шаблон открывающей части */

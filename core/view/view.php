@@ -32,7 +32,7 @@ class view {
 	/** Конструктор объекта
 	 * @param class $class Класс-фасад для шаблонизатора
 	*/
-	public function __construct(\core\view\_abs\abs_type $class) {
+	public function __construct(\core\view\_abs\abs_adapter $class) {
 		$this->_obj_view_type = $class;
 	}
 

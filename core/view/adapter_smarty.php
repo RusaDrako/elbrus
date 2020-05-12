@@ -10,7 +10,7 @@ namespace core\view;
  * @author Петухов Леонид <l.petuhov@okonti.ru>
  * @package core
  */
-class type_smarty extends _abs\abs_type {
+class adapter_smarty extends _abs\abs_adapter {
 
 
 
