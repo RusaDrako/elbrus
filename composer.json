@@ -9,7 +9,7 @@
       "email": "f182@rambler.ru"
     }
   ],
-  "type": "library",
+  "type": "project",
   "minimum-stability": "stable",
   "require": {},
   "autoload": {
