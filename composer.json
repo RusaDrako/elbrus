@@ -1,6 +1,21 @@
 {
-	"name": "rusadrako/elbrus",
-	"version": "0.1.0",
-	"require": {
-	}
+  "name": "rusadrako/elbrus",
+  "version": "0.1.0",
+  "description": "elbrus",
+  "license": "GPL-3.0-only",
+  "authors": [
+    {
+      "name": "Leonid Petukhov",
+      "email": "f182@rambler.ru"
+    }
+  ],
+  "type": "library",
+  "minimum-stability": "stable",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "elbrus\\": "src/"
+    }
+  },
+  "repositories": {}
 }
