@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title><?php echo $this->title; ?></title>
+<title><?php echo $this->header['title']; ?></title>
 
 <link rel="shortcut icon" href="/favicon.ico">
 
@@ -18,7 +18,7 @@
 
 	<div class="body">
 		<div class="content">
-			<h1><?php echo $this->title; ?></h1>
+			<h1><?php echo $this->header['title']; ?></h1>
 
 			<?php $this->include('index_menu.php', []); ?>
 		&nbsp;
