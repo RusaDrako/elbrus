@@ -58,8 +58,8 @@ class router {
 		$this->method = $method;
 		$this->router_default = $this->arr_router_settings;
 //		$_func = function ($a = false) {echo 'Ошибка 404: Страница не найдена.';};
-//		$this->default($_func);
-		$this->default(false);
+//		$this->default_page($_func);
+		$this->default_page(false);
 	}
 
 
@@ -324,7 +324,7 @@ class router {
 
 
 	/** Задаём страницу по умолчанию */
-	public function default($value, $type = false) {
+	public function default_page($value, $type = false) {
 		# Переводим все буквы в верхний регистр
 		$type = \strtoupper($type);
 		# Если существует указанный метод
@@ -403,4 +403,3 @@ class router {
 
 
 /**/
-?>

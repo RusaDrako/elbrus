@@ -31,7 +31,7 @@ class view_template_native extends \core\view\_abs\abs_adapter {
 
 	/** Загружает настройки шаблонизатора */
 	public function _setting() {
-		$this->_object = \resources\template_native\template_native::call(\registry::call()->get('FOLDER_ROOT') . 'template/template_native/');
+		$this->_object = \resources\template_native\template_native::call(\registry::call()->get('FOLDER_ROOT') . 'app/_template/template_native/');
 	}
 
 
