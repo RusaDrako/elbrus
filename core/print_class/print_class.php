@@ -60,11 +60,11 @@ class print_class {
 	/** Вызов объекта класса
 	* @return object Объект модели
 	*/
-	public static function call() {
+	public static function call(...$args) {
 		# Если объект отсутствует
 		if (null === self::$_object) {
 			# Активируем объект
-			self::$_object = new static();
+			self::$_object = new static(...$args);
 		}
 		# Возвращаем объект каласса
 		return self::$_object;
@@ -342,10 +342,3 @@ class print_class {
 
 /**/
 }
-
-
-
-
-
-/**/
-?>

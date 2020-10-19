@@ -15,5 +15,3 @@ interface inf_core_con {
 	 */
 	public function cmd($class_name, $set = null);
 }
-
-?>

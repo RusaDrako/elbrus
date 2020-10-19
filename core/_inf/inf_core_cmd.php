@@ -14,5 +14,3 @@ interface inf_core_cmd {
 	 */
 	public function execute($set = null);
 }
-
-?>

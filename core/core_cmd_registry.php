@@ -65,7 +65,3 @@ class core_cmd_registry implements _inf\inf_core_cmd {
 
 /**/
 }
-
-
-
-?>

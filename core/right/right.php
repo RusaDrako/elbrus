@@ -52,9 +52,9 @@ class right {
 	/** Вызов объекта
 	* @return object Объект модели
 	*/
-	public static function call() {
+	public static function call(...$args) {
 		if (!isset(self::$_object)) {
-			self::$_object = new static();
+			self::$_object = new static(...$args);
 		}
 		return self::$_object;
 	}
@@ -195,10 +195,3 @@ class right {
 
 /**/
 }
-
-
-
-
-
-/**/
-?>

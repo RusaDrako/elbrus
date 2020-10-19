@@ -12,11 +12,7 @@ namespace core\view\_abs;
  */
 abstract class abs_adapter {
 	/** Расширение шаблона */
-	protected $_extension = '.tpl';
-	/** Шаблон открывающей части */
-	protected $_header = 'header';
-	/** Шаблон замыкающей части */
-	protected $_footer = 'footer';
+	protected $_extension = null;
 	/** Объект шаблонизатора */
 	protected $_obj_view_engine = null;
 	/** Рабочий объект
@@ -52,9 +48,9 @@ abstract class abs_adapter {
 	/** Вызов объекта
 	* @return object Объект модели
 	*/
-	final public static function call() {
+	final public static function call(...$args) {
 		if (!isset(self::$_object)) {
-			self::$_object = new static();
+			self::$_object = new static(...$args);
 		}
 		return self::$_object;
 	}
@@ -89,19 +85,6 @@ abstract class abs_adapter {
 
 
 
-	/** Выводит указанный шаблон в обёртке шаблонов header и footer
-	 * @param string $link Ссылка на файл шаблона
-	 */
-	public function page($link) {
-		$this->block($this->_header);
-		$this->block($link);
-		$this->block($this->_footer);
-	}
-
-
-
-
-
 	/** Выводит указанный шаблон
 	 * @param string $link Ссылка на файл шаблона
 	 */
@@ -127,10 +110,3 @@ abstract class abs_adapter {
 
 /**/
 }
-
-
-
-
-
-/**/
-?>

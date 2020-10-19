@@ -14,7 +14,7 @@ require_once('_inf/inf_core_cmd.php');
  * @author Петухов Леонид <l.petuhov@okonti.ru>
  * @package core
  */
-class core_con implements _inf\inf_core_con /**/{
+class core implements _inf\inf_core_con /**/{
 	/** Объект последней команды
 	 * @var object $_last_cmd
 	 */
@@ -34,16 +34,13 @@ class core_con implements _inf\inf_core_con /**/{
 	 */
 	private function __construct($file_map = null) {
 		if (!$file_map) {
-			$file_map = 'core_map.php';
+			$file_map = __DIR__ . '/core_con_map.php';
 		}
 		$map = require_once($file_map);
 		foreach ($map as $v) {
 			require_once($v[0] . '.php');
-//echo get_called_class() . ': загрузка ' . $v[0];
 			$this->cmd('\\' . __NAMESPACE__ . '\\' . $v[0], $v[1]);
-//			echo '<hr>';
 		}
-//		echo '---<hr>';
 	}
 
 
@@ -58,10 +55,10 @@ class core_con implements _inf\inf_core_con /**/{
 
 
 	/** */
-	public static function call($file_map = null) {
+	public static function call(...$args) {
 		# Работаем через static а не через self, что бы получать объект вызывающего класса
 		if (null === static::$_object) {
-			static::$_object = new static($file_map);
+			static::$_object = new static(...$args);
 		}
 		return static::$_object;
 	}
@@ -107,13 +104,4 @@ class core_con implements _inf\inf_core_con /**/{
 
 
 
-
-# Запуск ядра
-\core\core_con::call('core_map.php');
-
-
-
-
-
 /**/
-?>

@@ -29,7 +29,3 @@ class core_cmd_request implements _inf\inf_core_cmd {
 
 /**/
 }
-
-
-
-?>

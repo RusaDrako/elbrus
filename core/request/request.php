@@ -40,10 +40,10 @@ class request {
 
 
 	/** */
-	public static function call() {
+	public static function call(...$args) {
 		# Работаем через static а не через self, что бы получать объект вызывающего класса
 		if (null === static::$_object) {
-			static::$_object = new static();
+			static::$_object = new static(...$args);
 		}
 		return static::$_object;
 	}
@@ -122,7 +122,7 @@ class request {
 
 
 	/** */
-	public function isset($key) {
+	public function is_set($key) {
 		if (isset($this->_request[$key])) {
 			return true;
 		}
@@ -156,7 +156,3 @@ class request {
 
 /**/
 }
-
-
-
-?>

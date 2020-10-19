@@ -29,7 +29,3 @@ class core_cmd_reg_funcs implements _inf\inf_core_cmd {
 
 /**/
 }
-
-
-
-?>

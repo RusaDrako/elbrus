@@ -56,7 +56,3 @@ class registry_cmd_get_data_from_file_evn implements inf_registry_cmd {
 
 /**/
 }
-
-
-
-?>

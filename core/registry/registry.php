@@ -57,10 +57,10 @@ class registry {
 
 
 	/** */
-	public static function call() {
+	public static function call(...$args) {
 		# Работаем через static а не через self, что бы получать объект вызывающего класса
 		if (null === static::$_object) {
-			static::$_object = new static();
+			static::$_object = new static(...$args);
 		}
 		return static::$_object;
 	}
@@ -132,7 +132,3 @@ class registry {
 
 /**/
 }
-
-
-
-?>

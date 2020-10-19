@@ -89,9 +89,3 @@ class request_Test extends TestCase {
 
 /**/
 }
-
-
-
-
-/**/
-?>

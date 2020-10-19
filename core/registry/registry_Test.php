@@ -102,9 +102,3 @@ class registry_Test extends TestCase {
 
 /**/
 }
-
-
-
-
-/**/
-?>

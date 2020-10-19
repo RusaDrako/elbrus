@@ -228,9 +228,3 @@ class right_Test extends TestCase {
 
 /**/
 }
-
-
-
-
-/**/
-?>

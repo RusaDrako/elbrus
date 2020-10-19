@@ -14,7 +14,3 @@ interface inf_registry_cmd {
 
 /**/
 }
-
-
-
-?>
