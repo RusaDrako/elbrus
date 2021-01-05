@@ -20,7 +20,7 @@ class template_native {
 	private $_url_template				= null;
 
 	/** Массив переменных используемых в шаблоне
-	 * @var array $arr_variable */
+	* @var array $arr_variable */
 	private $_arr_variable				= [];
 
 
@@ -110,23 +110,5 @@ class template_native {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /**/
 }
-
-
-
-
-
-/**/
-?>

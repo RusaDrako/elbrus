@@ -47,7 +47,7 @@ class template_native_template {
 
 
 
-	/**  */
+	/** */
 	public function __get($name) {
 		# Если переменная присутчствует в шаблоне
 		if (isset($this->_var[$name])) {
@@ -63,7 +63,7 @@ class template_native_template {
 
 
 
-	/**  */
+	/** */
 	public function result() {
 		# Возвращаем результат шаблона
 		return \implode("\n", $this->_content);
@@ -73,14 +73,14 @@ class template_native_template {
 
 
 
-	/**  */
+	/** */
 	public function include(string $link, array $var = []) {
-			# Запоминаем текущий результат буфера
-			$this->_content[] = ob_get_contents();
+		# Запоминаем текущий результат буфера
+		$this->_content[] = ob_get_contents();
 		# Отключаем буферизацию текущего шаблона
 		ob_end_clean();
 		# Присваеваем переменные подшаблона
-		foreach($var as $k => $v) {
+		foreach ($var as $k => $v) {
 			$this->_obj_native->variable($k, $v);
 		}
 		# Выполняем подшаблон
@@ -95,10 +95,3 @@ class template_native_template {
 
 /**/
 }
-
-
-
-
-
-/**/
-?>
