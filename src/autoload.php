@@ -1,0 +1,11 @@
+<?php
+
+require_once('_inf/inf_core_con.php');
+require_once('_inf/inf_core_cmd.php');
+require_once('print_data/autoload.php');
+
+
+
+require_once('core.php');
+
+Elbrus\Framework\core::call();
