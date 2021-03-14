@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Elbrus\\Framework": "src"
+            "Elbrus\\Framework\\": "src"
         },
         "files": [
             "src/autoload.php"
