@@ -1,21 +1,25 @@
 {
-  "name": "rusadrako/elbrus",
-  "version": "0.1.0",
-  "description": "elbrus",
-  "license": "GPL-3.0-only",
-  "authors": [
-    {
-      "name": "Leonid Petukhov",
-      "email": "f182@rambler.ru"
+    "name": "elbrus/framework",
+	"version": "0.2.0",
+    "description": "Framework Elbrus",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Petukhov Leonid",
+            "email": "rusadrako@yandex.ru"
+        }
+    ],
+	"type": "project",
+    "minimum-stability": "stable",
+	"require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Elbrus\\Framework": "src"
+        },
+        "files": [
+            "src/autoload.php"
+        ]
     }
-  ],
-  "type": "project",
-  "minimum-stability": "stable",
-  "require": {},
-  "autoload": {
-    "psr-4": {
-      "elbrus\\": "src/"
-    }
-  },
-  "repositories": {}
 }
