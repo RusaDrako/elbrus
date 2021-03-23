@@ -8,6 +8,6 @@ require_once('print_data/autoload.php');
 
 require_once('core.php');
 
-require_once('alias.php');
+require_once('aliases.php');
 
 Elbrus::call();
