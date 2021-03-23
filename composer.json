@@ -1,7 +1,7 @@
 {
     "name": "elbrus/framework",
     "description": "Framework Elbrus",
-    "license": "GPL-3.0-only",
+    "license": "MIT",
     "authors": [
         {
             "name": "Petukhov Leonid",

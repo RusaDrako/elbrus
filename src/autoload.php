@@ -10,4 +10,4 @@ require_once('core.php');
 
 require_once('aliases.php');
 
-Elbrus::call();
+//Elbrus::call();

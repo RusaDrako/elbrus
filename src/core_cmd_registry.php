@@ -58,15 +58,27 @@ class core_cmd_registry implements _inf\inf_core_cmd {
 
 	/** Генерирование корневой папки приложение */
 	private function _get_host_folder() {
-		# Если есть переменная корня сервера
-		if (isset($_SERVER['DOCUMENT_ROOT']) && $_SERVER['DOCUMENT_ROOT']) {
-			$__dir__ = $_SERVER['DOCUMENT_ROOT'];
+		$_dir_control = __DIR__;
+		$_arr_dir_control = \explode(DIRECTORY_SEPARATOR, __DIR__);
+		$_arr_dir_control_2 = \array_reverse($_arr_dir_control);
+		if (isset($_arr_dir_control_2[3])
+				&& $_arr_dir_control_2[3] == 'vendor') {
+			array_pop($_arr_dir_control);
+			array_pop($_arr_dir_control);
+			array_pop($_arr_dir_control);
+			array_pop($_arr_dir_control);
+			$__dir__ = \implode(DIRECTORY_SEPARATOR, $_arr_dir_control);
 		} else {
-			# Ищем откуда был запущено приложение
-			$backtrace = debug_backtrace();
-			$backtrace = array_reverse($backtrace);
-			# Формируем ссылку к корню проекта
-			$__dir__ = dirname($backtrace[0]['file']);
+			# Если есть переменная корня сервера
+			if (isset($_SERVER['DOCUMENT_ROOT']) && $_SERVER['DOCUMENT_ROOT']) {
+				$__dir__ = $_SERVER['DOCUMENT_ROOT'] . '/..';
+			} else {
+				# Ищем откуда был запущено приложение
+				$backtrace = debug_backtrace();
+				$backtrace = array_reverse($backtrace);
+				# Формируем ссылку к корню проекта
+				$__dir__ = dirname($backtrace[0]['file']);
+			}
 		}
 		# Меняем \ на / (при работе на локальной машине)
 		$__dir__ = str_replace('\\', '/', $__dir__);
