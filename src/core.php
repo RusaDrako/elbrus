@@ -2,11 +2,6 @@
 
 namespace Elbrus\Framework;
 
-require_once('_inf/inf_core_con.php');
-require_once('_inf/inf_core_cmd.php');
-
-
-
 
 
 /** Загрузка ядра
