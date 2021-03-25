@@ -1,6 +1,6 @@
 <?php
 
-namespace core\view\_abs;
+namespace Elbrus\Framework\view\_abs;
 
 
 
@@ -28,7 +28,7 @@ abstract class abs_adapter {
 
 
 	/** Конструктор объекта (загрузка настроек) */
-	final private function __construct() {
+	final public function __construct() {
 		$this->_setting();
 	}
 
