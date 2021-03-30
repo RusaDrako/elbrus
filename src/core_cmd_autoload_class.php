@@ -44,7 +44,7 @@ class core_cmd_autoload_class implements _inf\inf_core_cmd {
 			# Третий уровень - место вызова неизвестного класса
 			$backtrace = debug_backtrace (0, 3);
 			# Проверяем, существует ли ссылка на файл (запоминаем её)
-			if (isset($backtrace[2]) && $backtrace[2]['file']) {
+			if (isset($backtrace[2]) && isset($backtrace[2]['file'])) {
 				$backtrace_file = $backtrace[2]['file'];
 			} else {
 				$backtrace_file = '';
