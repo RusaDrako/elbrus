@@ -42,14 +42,17 @@ class registry {
 
 
 
-	/** Деструктор класса */
+	/** */
 	public function __debugInfo() {
-		$lock = array_intersect_key($this->_value, $this->_lock);
-		$unlock = array_diff_key($this->_value, $this->_lock);
-		ksort($lock);
-		ksort($unlock);
-		return ['value' => $this->_value, 'lock' => $this->_lock];
-		return ['lock' => $lock, 'unlock' => $unlock];
+		$result = [];
+		foreach($this->_value as $k => $v) {
+			$key = $k;
+			if (\array_key_exists($k, $this->_lock)) {
+				$key .= ' (lock)';
+			}
+			$result[$key] = $v;
+		}
+		return $result;
 	}
 
 
