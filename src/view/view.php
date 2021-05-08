@@ -16,7 +16,7 @@ class view {
 	/** Экземпляр класса
 	 * @var object
 	 */
-	private static $_object = null;
+	private static $_object = [];
 
 
 
@@ -49,10 +49,11 @@ class view {
 	* @return object Объект модели
 	*/
 	public static function call(...$args) {
-		if (!isset(self::$_object)) {
-			self::$_object = new static(...$args);
+		$class = \get_called_class();
+		if (!isset(self::$_object[$class])) {
+			self::$_object[$class] = new static(...$args);
 		}
-		return self::$_object;
+		return self::$_object[$class];
 	}
 
 
