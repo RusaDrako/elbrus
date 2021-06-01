@@ -95,18 +95,18 @@ class core_cmd_autoload_class implements _inf\inf_core_cmd {
 	 */
 	private function _message($title) {
 		$mes = [];
-		if (!\registry::call()->get('test')) {
-			$mes[] = 'Ошибка обращения к классу. Обратитесь к администратору. <div style="display: none;">';
-		}
 		$mes[] = '<hr><b style="font-size: 150%;">' . __CLASS__ . ':</b>';
 		$mes[] = '';
 		$mes[] = $title;
 		$mes[] = '';
 		$mes[] = $this->_backtrace();
 		if (!\registry::call()->get('test')) {
+			array_unshift($mes, 'Ошибка обращения к классу. Обратитесь к администратору. <div style="display: none;">');
 			$mes[] = '</div>';
 		}
-		echo implode('<br>', $mes);
+		echo '<pre>';
+		echo implode("\r\n", $mes);
+		throw new \Exception(strip_tags($title), 1);
 	}
 
 
