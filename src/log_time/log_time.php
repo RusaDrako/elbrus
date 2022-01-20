@@ -102,7 +102,7 @@ class log_time {
 			'title' => $title,
 			'file'	=> $file,
 			'line'	=> $line,
-			'time'	=> microtime(),
+			'time'	=> microtime(true),
 		];
 	}
 
