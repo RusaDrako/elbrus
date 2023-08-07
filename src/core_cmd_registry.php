@@ -58,6 +58,8 @@ class core_cmd_registry implements _inf\inf_core_cmd {
 
 	/** Генерирование корневой папки приложение */
 	private function _get_host_folder() {
+		# Если папка задана из вне
+		if (defined('ELBRUS_FOLDER_ROOT')) {return ELBRUS_FOLDER_ROOT;}
 		$_dir_control = __DIR__;
 		$_arr_dir_control = \explode(DIRECTORY_SEPARATOR, __DIR__);
 		$_arr_dir_control_2 = \array_reverse($_arr_dir_control);
