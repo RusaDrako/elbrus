@@ -11,8 +11,8 @@ namespace Elbrus\Framework;
  * @package core
  */
 class core_cmd_autoload_class implements _inf\inf_core_cmd {
-	/** Игнорируемые папки
-	* @var array
+	/** Игнорируемые папки (вызов файла)
+	 * @var array
 	 */
 	private static $_folder_ignore = [];
 	/** Число автоматически подгружаемых классов
@@ -26,51 +26,34 @@ class core_cmd_autoload_class implements _inf\inf_core_cmd {
 
 
 
-
-
-
-
-
-
-
 	/** Автоматически выполняемый метод
 	 * @param null|string|array $set Настройки настройки. По умолчанию NULL
 	 * @return void
 	 */
 	public function execute($set = null) {
 		return spl_autoload_register(function ($class_name) {
-			$folder_root = \registry::call()->get('FOLDER_ROOT');
-			# Получаем бактрайс активации файла (первые два уровня - текущий файл)
-			# Третий уровень - место вызова неизвестного класса
-			$backtrace = debug_backtrace (0, 3);
-			# Проверяем, существует ли ссылка на файл (запоминаем её)
-			if (isset($backtrace[2]) && isset($backtrace[2]['file'])) {
-				$backtrace_file = $backtrace[2]['file'];
-			} else {
-				$backtrace_file = '';
-			}
 			# Получаем имя текущего класса (для вызова функций и свойств)
 			$this_class = __CLASS__;
-			# Для винды меняем слэши на обратные
-			$backtrace_file = \str_replace('\\', '/', $backtrace_file);
-			# Проверяем, не относится ли папка файла к игнорируемым
-			foreach ($this_class::$_folder_ignore as $k => $v) {
-				if (\substr($backtrace_file, 0, \strlen($v)) == $v) {
-					return;
-				}
-			}
+			# Проверяем игнорирование папки вызова
+			if($this_class::_is_ignor_folder()){ return; }
+
 			# Увеличиваем счётчик автозагруженных файлов (для контроля)
 			$this_class::$_count_class++;
 			# Запоминаем автозагруженный файл (для контроля)
 			$this_class::$_arr_name_class[] = $class_name;
-			# Разбиваем имя функции на массив адреса
+
+			# Разбиваем имя класса на массив адреса
 			$_arr_class_folder = \explode('\\', $class_name);
 			# Нулевой массив адреса
 			$arr_class_folder = array_diff($_arr_class_folder, array(null, false, ''));
+
 			# Преобразуем имя функции в имя папки
 			$class_folder = \implode('/', $arr_class_folder);
 			# Формируем адрес файла класса
+
+			$folder_root = \registry::call()->get('FOLDER_ROOT');
 			$class_file = $folder_root . $class_folder . '.php';
+
 			# Пробуем подключить файл
 			if (!file_exists($class_file)) {
 				$this->_message('Файл класса, трайта или интерфейса не найден:<br><b style="color: #008;">' . $class_file . '</b>');
@@ -86,6 +69,32 @@ class core_cmd_autoload_class implements _inf\inf_core_cmd {
 	}
 
 
+
+	/** Проверяеn, надо ли игнорировать папку вызова
+	 * @return bool
+	 */
+	private function _is_ignor_folder() {
+		# Получаем имя текущего класса (для вызова функций и свойств)
+		$this_class = __CLASS__;
+		# Получаем бактрайс активации файла (первые два уровня - текущий файл)
+		# Третий уровень - место вызова неизвестного класса
+		$backtrace = debug_backtrace (0, 4);
+		# Проверяем, существует ли ссылка на файл (запоминаем её)
+		if (isset($backtrace[3]) && isset($backtrace[3]['file'])) {
+			$backtrace_file = $backtrace[3]['file'];
+		} else {
+			$backtrace_file = '';
+		}
+		# Для винды меняем слэши на обратные
+		$backtrace_file = \str_replace('\\', '/', $backtrace_file);
+		# Проверяем, не относится ли папка файла к игнорируемым
+		foreach ($this_class::$_folder_ignore as $k => $v) {
+			if (\substr($backtrace_file, 0, \strlen($v)) == $v) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 
 
@@ -111,8 +120,6 @@ class core_cmd_autoload_class implements _inf\inf_core_cmd {
 
 
 
-
-
 	/** Возвращает маршрут приведший к ошибке
 	 * @return string Сообщение с маршрутом
 	 */
@@ -130,15 +137,13 @@ class core_cmd_autoload_class implements _inf\inf_core_cmd {
 			$line = isset($v['line'])			? $v['line']				: '---';
 			# Выводим сообщение
 			$mes[] = '<b>' . $file
-					. ' (' . $line . ')'
-					. ' <span style="color: #00b;">' .  $class  . '</span>'
-					. '<span style="color: #b00;">' . $function . '</span></b>'
-					;
+				. ' (' . $line . ')'
+				. ' <span style="color: #00b;">' .  $class  . '</span>'
+				. '<span style="color: #b00;">' . $function . '</span></b>'
+			;
 		}
 		return implode('<br>', $mes);
 	}
-
-
 
 
 
@@ -155,8 +160,6 @@ class core_cmd_autoload_class implements _inf\inf_core_cmd {
 
 
 
-
-
 	/** Добавляем игнорируемую папку (если обращение из этой папки или ниже, то автозагрузка не обрабатывается)
 	 * Иногда, нужно при активации сторонних библиотек: smarty 3.1.34
 	 * @return void
@@ -164,10 +167,6 @@ class core_cmd_autoload_class implements _inf\inf_core_cmd {
 	public static function add_folder_ignore($folder) {
 		self::$_folder_ignore[] = $folder;
 	}
-
-
-
-
 
 /**/
 }
