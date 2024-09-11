@@ -2,8 +2,6 @@
 
 namespace Elbrus\Framework\request;
 
-
-
 /**
  * @author Петухов Леонид <rusadrako@yandex.ru>
  * @package core
@@ -18,8 +16,6 @@ class request {
 
 
 
-
-
 	/** Конструктор класса
 	 * Приватный, т.к. требуется создавать только один объект класса
 	 */
@@ -29,16 +25,8 @@ class request {
 		$this->_set_page();
 	}
 
-
-
-
-
 	/** Деструктор класса */
 	public function __destruct() {}
-
-
-
-
 
 	/** */
 	public static function call(...$args) {
@@ -48,10 +36,6 @@ class request {
 		}
 		return static::$_object;
 	}
-
-
-
-
 
 	/** Получаем данные о странице */
 	private function _set_page() {
@@ -73,10 +57,6 @@ class request {
 		}
 	}
 
-
-
-
-
 	/** Получаем данные о методе */
 	private function _set_method() {
 		$this->_request['sys_method'] = 'GET';
@@ -97,10 +77,6 @@ class request {
 		}
 	}
 
-
-
-
-
 	/** Получаем данные запроса */
 	private function _set_request() {
 		# При запуске через сервер
@@ -118,10 +94,6 @@ class request {
 		}
 	}
 
-
-
-
-
 	/** */
 	public function is_set($key) {
 		if (isset($this->_request[$key])) {
@@ -129,10 +101,6 @@ class request {
 		}
 		return false;
 	}
-
-
-
-
 
 	/** */
 	public function get($key, $default = null) {
@@ -142,18 +110,10 @@ class request {
 		return $default;
 	}
 
-
-
-
-
 	/** */
 	public function get_list() {
 		return $this->_request;
 	}
-
-
-
-
 
 /**/
 }

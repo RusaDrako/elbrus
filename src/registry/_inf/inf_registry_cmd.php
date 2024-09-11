@@ -2,8 +2,6 @@
 
 namespace Elbrus\Framework\registry\_inf;
 
-
-
 interface inf_registry_cmd {
 
 	/** Заполняет/обновляет ключ регистра

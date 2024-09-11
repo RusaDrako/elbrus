@@ -2,17 +2,11 @@
 
 namespace Elbrus\Framework;
 
-
-
-
-
 /** Команда на загрузку базового шаблонизатора
  * @author Петухов Леонид <rusadrako@yandex.ru>
  * @package core
  */
 class core_cmd_view implements _inf\inf_core_cmd {
-
-
 
 	/** Автоматически выполняемый метод
 	 * @param \null\string\array $set Настройки настройки. По умолчанию NULL
@@ -22,10 +16,6 @@ class core_cmd_view implements _inf\inf_core_cmd {
 		require_once(__DIR__ . '/view/autoload.php');
 //		\view::call('smarty');
 	}
-
-
-
-
 
 /**/
 }

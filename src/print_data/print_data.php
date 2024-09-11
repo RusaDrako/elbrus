@@ -2,10 +2,6 @@
 
 namespace Elbrus\Framework\print_data;
 
-
-
-
-
 /** <b>Печать сообщений v 1.0.0</b>
  * @version 1.0.0
  * @created 2020-01-23
@@ -33,27 +29,14 @@ class print_data {
 
 
 
-
-
-
-
-
-
-
 	/** Загрузка класса */
 	public function __construct() {
 		# Базовая чистка
 		$this->_clean();
 	}
 
-
-
-
-
 	/** Выгрузка класса */
 	public function __destruct () {}
-
-
 
 
 
@@ -70,10 +53,6 @@ class print_data {
 		return self::$_object;
 	}
 
-
-
-
-
 	/** Базова чистка настроек */
 	private function _clean() {
 		$this->_backtrace		= false;
@@ -83,10 +62,6 @@ class print_data {
 		$this->_color_bg		= '#ffd';
 		$this->_color_title		= '#080';
 	}
-
-
-
-
 
 	/** Рекурсивная сборка массива в строку
 	 * @param string $glue Строка-склейка
@@ -101,19 +76,11 @@ class print_data {
 		return implode($glue, $array);
 	}
 
-
-
-
-
 	/** */
 	public function color_bg($value) {
 		$this->_color_bg = $value;
 		return $this;
 	}
-
-
-
-
 
 	/** */
 	public function color_title($value) {
@@ -121,19 +88,11 @@ class print_data {
 		return $this;
 	}
 
-
-
-
-
 	/** */
 	public function backtrace($type) {
 		$this->_backtrace = $type;
 		return $this;
 	}
-
-
-
-
 
 	/** */
 	public function as_it_is($bool = false) {
@@ -141,19 +100,11 @@ class print_data {
 		return $this;
 	}
 
-
-
-
-
 	/** */
 	public function var_dump($bool = false) {
 		$this->_var_dump = $bool;
 		return $this;
 	}
-
-
-
-
 
 	/** */
 	public function title($value) {
@@ -161,19 +112,11 @@ class print_data {
 		return $this;
 	}
 
-
-
-
-
 	/** */
 	public function description($value) {
 		$this->_description = $value;
 		return $this;
 	}
-
-
-
-
 
 	/** */
 	public function print_form() {
@@ -204,10 +147,6 @@ class print_data {
 		$this->_clean();
 	}
 
-
-
-
-
 	/** */
 	public function print_app() {
 		$content = [];
@@ -224,10 +163,6 @@ class print_data {
 		$this->_clean();
 	}
 
-
-
-
-
 	/** */
 	public function _print_title($key_rand) {
 		# Если заголовок не задан
@@ -243,10 +178,6 @@ class print_data {
 		return $content;
 	}
 
-
-
-
-
 	/** */
 	public function _print_title_app($key_rand) {
 		# Если заголовок не задан
@@ -261,10 +192,6 @@ class print_data {
 		# Возвращаем содержимое
 		return $content;
 	}
-
-
-
-
 
 	/** Блок информации по "цепочке вызова" */
 	private function _print_backtrace() {
@@ -282,10 +209,6 @@ class print_data {
 		# Возвращаем содержимое
 		return $content;
 	}
-
-
-
-
 
 	/** Блок информации по "цепочке вызова" Тип 1 */
 	public function _print_backtrace_1() {
@@ -309,10 +232,6 @@ class print_data {
 		# Возвращаем содержимое
 		return $content;
 	}
-
-
-
-
 
 	/** Блок информации по "цепочке вызова" Тип 2 */
 	private function _print_backtrace_2() {
@@ -346,10 +265,6 @@ class print_data {
 		return $content;
 	}
 
-
-
-
-
 	/** Блок информации по "цепочке вызова" */
 	private function _print_backtrace_app() {
 		$content = [];
@@ -366,10 +281,6 @@ class print_data {
 		# Возвращаем содержимое
 		return $content;
 	}
-
-
-
-
 
 	/** Блок информации по "цепочке вызова" Тип 1 */
 	public function _print_backtrace_1_app() {
@@ -390,10 +301,6 @@ class print_data {
 		# Возвращаем содержимое
 		return $content;
 	}
-
-
-
-
 
 	/** Блок информации по "цепочке вызова" Тип 2 */
 	private function _print_backtrace_2_app() {
@@ -424,10 +331,6 @@ class print_data {
 		return $content;
 	}
 
-
-
-
-
 	/** Вывод содержимого */
 	public function _print_description() {
 		$content = [];
@@ -451,10 +354,6 @@ class print_data {
 		# Возвращаем содержимое
 		return $content;
 	}
-
-
-
-
 
 /**/
 }

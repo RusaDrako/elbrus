@@ -2,19 +2,11 @@
 
 namespace Elbrus\Framework;
 
-
-
-
-
 /**
  * @author Петухов Леонид <rusadrako@yandex.ru>
  * @package core
  */
 class core_cmd_registry implements _inf\inf_core_cmd {
-
-
-
-
 
 	/** Автоматически выполняемый метод
 	 * @param null|string|array $set Настройки настройки. По умолчанию NULL
@@ -37,10 +29,6 @@ class core_cmd_registry implements _inf\inf_core_cmd {
 		\registry::call()->cmd('\Elbrus\Framework\registry\registry_cmd_get_data_from_file_evn', $folder . '.env');
 	}
 
-
-
-
-
 	/** Генерирование корневой папки приложение */
 	private function _get_web_application() {
 		# Если есть переменная корня сервера
@@ -51,10 +39,6 @@ class core_cmd_registry implements _inf\inf_core_cmd {
 		}
 		return false;
 	}
-
-
-
-
 
 	/** Генерирование корневой папки приложение */
 	private function _get_host_folder() {
@@ -92,10 +76,6 @@ class core_cmd_registry implements _inf\inf_core_cmd {
 		unset($_arr_dir);
 		return $_dir;
 	}
-
-
-
-
 
 /**/
 }

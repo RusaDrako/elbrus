@@ -2,10 +2,6 @@
 
 namespace Elbrus\Framework;
 
-
-
-
-
 	/* * Выводит список доступных пространств имён * /
 	function namespace_list() {
 		$result = array();
@@ -19,9 +15,6 @@ namespace Elbrus\Framework;
 		}
 		return $result;
 	}
-
-
-
 
 	/** Функция со статистикой */
 	function shutdown_stat() {
@@ -62,10 +55,6 @@ namespace Elbrus\Framework;
 			echo \implode('', $content);
 	}
 
-
-
-
-
 	/** Функция со статистикой */
 	function shutdown_error() {
 		global $db;
@@ -90,10 +79,6 @@ namespace Elbrus\Framework;
 		];
 		$db->insertRow('log_error', $arr_insert);
 	}
-
-
-
-
 
 	/* * Функция со статистикой * /
 	function shutdown_stat_2() {
@@ -121,7 +106,6 @@ namespace Elbrus\Framework;
 
 		echo '<b>Время отработки:</b><br>' . round((microtime(true)-_ELBRUS_START), 8) . ' сек.';
 		echo '</div>';
-
 
 		if (1 < _ELBRUS_PRINT_SHUTDOWN_STAT) {
 
@@ -166,10 +150,6 @@ namespace Elbrus\Framework;
 
 	}
 
-
-
-
-
 	/* * */
 	function shutdown_stat_error() {
 	/*	global $global_array_error;
@@ -195,10 +175,6 @@ namespace Elbrus\Framework;
 		}
 		echo '</div>';*/
 	}
-
-
-
-
 
 	//$global_array_error = [];
 

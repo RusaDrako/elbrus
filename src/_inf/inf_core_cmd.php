@@ -2,10 +2,6 @@
 
 namespace Elbrus\Framework\_inf;
 
-
-
-
-
 /** Интерфейс класса команды ядра */
 interface inf_core_cmd {
 	/** Автоматически выполняемый метод

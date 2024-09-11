@@ -2,8 +2,6 @@
 
 namespace Elbrus\Framework\view\_abs;
 
-
-
 /**
  * @author Петухов Леонид <rusadrako@yandex.ru>
  * @package core
@@ -20,28 +18,13 @@ abstract class abs_adapter {
 
 
 
-
-
-
-
-
-
-
 	/** Конструктор объекта (загрузка настроек) */
 	final public function __construct() {
 		$this->_setting();
 	}
 
-
-
-
-
 	/** Деструктор класса */
 	final public function __destruct() {}
-
-
-
-
 
 	/** Вызов объекта
 	* @return object Объект модели
@@ -53,25 +36,13 @@ abstract class abs_adapter {
 		return self::$_object;
 	}
 
-
-
-
-
 	/** Загружает настройки шаблонизатора */
 	abstract public function _setting();
-
-
-
-
 
 	/** Загружает настройки шаблонизатора */
 	protected function _name_file($link) {
 		return $link . $this->_extension;
 	}
-
-
-
-
 
 	/** Загружает переменную в шаблонизатор
 	 * @param string $name Имя переменной в шаблонизаторе
@@ -79,27 +50,15 @@ abstract class abs_adapter {
 	 */
 	abstract public function variable($name, $value);
 
-
-
-
-
 	/** Выводит указанный шаблон
 	 * @param string $link Ссылка на файл шаблона
 	 */
 	abstract public function block($link);
 
-
-
-
-
 	/** Возвращает html-код указанного шаблона
 	 * @param string $link Ссылка на файл шаблона
 	 */
 	abstract public function html($link);
-
-
-
-
 
 /**/
 }

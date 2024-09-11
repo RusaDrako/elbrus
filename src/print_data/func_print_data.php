@@ -2,10 +2,6 @@
 
 namespace Elbrus\Framework\print_data;
 
-
-
-
-
 /** Пользовательское сообщение.
  * @param int/string/array $value Переменная для печати.
  * @param string $title Заголовок.
@@ -22,10 +18,6 @@ function print_info($value, $title = false, $view = false) {
 				;
 	}
 }
-
-
-
-
 
 /** Пользовательское сообщение.
  * @param int/string/array $value Переменная для печати.
@@ -44,10 +36,6 @@ function print_info_app($value, $title = false, $view = false) {
 	}
 }
 
-
-
-
-
 /** Пользовательское сообщение.
  * @param int/string/array $value Переменная для печати.
  * @param string $title Заголовок.
@@ -65,10 +53,6 @@ function print_info_var($value, $title = false, $view = false) {
 				;
 	}
 }
-
-
-
-
 
 /** Пользовательское сообщение.
  * @param int/string/array $value Переменная для печати.
@@ -89,10 +73,6 @@ function print_table($value, $title = false, $view = false) {
 	}
 }
 
-
-
-
-
 /** Пользовательское сообщение.
  * @param int/string/array $value Переменная для печати.
  * @param string $title Заголовок.
@@ -112,10 +92,6 @@ function print_tree($value, $title = false, $view = false) {
 	}
 }
 
-
-
-
-
 /** Пользовательское сообщение - лог.
  * @param int/string/array $value Переменная для печати.
  * @param bool $view Маркер "показывать в любом случае".
@@ -131,10 +107,6 @@ function print_log($value, $view = false) {
 				;
 	}
 }
-
-
-
-
 
 /** Пользовательское сообщение - ошибка.
  * @param int/string/array $value Переменная для печати.

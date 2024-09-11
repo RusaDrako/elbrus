@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 /** Логирование точек времени */
 class log_time {
 	/** @param object $arr_point Массив точек */
@@ -12,21 +9,11 @@ class log_time {
 
 
 
-
-
 	/** Конструктор	*/
 	public function __construct() {}
 
-
-
-
-
 	/** Деструктор */
 	function __destruct() {}
-
-
-
-
 
 	/** Типовой вызов объекта класса */
 	public static function call(...$args) {
@@ -36,10 +23,6 @@ class log_time {
 		}
 		return static::$_object;
 	}
-
-
-
-
 
 	/** Выводит отчёт
 	* @param $return [false] Метка о возврате содержимого отчёта, а не его вывод
@@ -69,10 +52,6 @@ class log_time {
 		echo '<hr></pre>';
 	}
 
-
-
-
-
 	/** Формирует строчку отчёта */
 	private function _report_line($delta_start, $delta_last, $title, $file = null, $line = null) {
 		$delta_start = number_format($delta_start, 6);
@@ -81,10 +60,6 @@ class log_time {
 		if ($file) { $str .= " <span style=\"color: #000077;\">{$file} ($line)</span>";}
 		return $str;
 	}
-
-
-
-
 
 	/** Устанавливает точку времени
 	* @param $title [---] Заголовок точки
@@ -105,10 +80,6 @@ class log_time {
 			'time'	=> microtime(true),
 		];
 	}
-
-
-
-
 
 /**/
 }

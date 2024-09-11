@@ -2,8 +2,6 @@
 /** Карта загрузок команд ядра */
 namespace Elbrus\Framework;
 
-
-
 return [
 	['core_cmd_autoload_class', ''],		# Загрузка автозагрузчика класса
 	['core_cmd_registry', ''],				# Регистр приложения
@@ -13,7 +11,5 @@ return [
 	['core_cmd_view', ''],					# Подгружает основной шаблонизатор
 	['core_cmd_reg_funcs', ''],				# Вспомогательные функции
 ];
-
-
 
 /**/

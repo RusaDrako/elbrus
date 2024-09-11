@@ -2,10 +2,6 @@
 
 namespace Elbrus\Framework;
 
-
-
-
-
 /**
  * @author Петухов Леонид <rusadrako@yandex.ru>
  * @package core
@@ -68,8 +64,6 @@ class core_cmd_autoload_class implements _inf\inf_core_cmd {
 		});
 	}
 
-
-
 	/** Проверяеn, надо ли игнорировать папку вызова
 	 * @return bool
 	 */
@@ -96,8 +90,6 @@ class core_cmd_autoload_class implements _inf\inf_core_cmd {
 		return false;
 	}
 
-
-
 	/** Выводит сообщение об ошибке
 	 * @param string $title Текст сообщения
 	 * @return void
@@ -117,8 +109,6 @@ class core_cmd_autoload_class implements _inf\inf_core_cmd {
 		echo implode("\r\n", $mes);
 		throw new \Exception(strip_tags($title), 1);
 	}
-
-
 
 	/** Возвращает маршрут приведший к ошибке
 	 * @return string Сообщение с маршрутом
@@ -145,8 +135,6 @@ class core_cmd_autoload_class implements _inf\inf_core_cmd {
 		return implode('<br>', $mes);
 	}
 
-
-
 	/** Отмена регистрации автозагрузчика файлов
 	 * Иногда, нужно при активации сторонних библиотек: smarty 3.1.34
 	 * @return void
@@ -157,8 +145,6 @@ class core_cmd_autoload_class implements _inf\inf_core_cmd {
 			spl_autoload_unregister($function);
 		}
 	}
-
-
 
 	/** Добавляем игнорируемую папку (если обращение из этой папки или ниже, то автозагрузка не обрабатывается)
 	 * Иногда, нужно при активации сторонних библиотек: smarty 3.1.34

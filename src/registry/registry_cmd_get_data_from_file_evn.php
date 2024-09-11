@@ -2,11 +2,7 @@
 
 namespace Elbrus\Framework\registry;
 
-
-
 class registry_cmd_get_data_from_file_evn implements _inf\inf_registry_cmd {
-
-
 
 	/** Заполняет/обновляет ключ регистра
 	 * @param string $set Имя файла
@@ -20,8 +16,6 @@ class registry_cmd_get_data_from_file_evn implements _inf\inf_registry_cmd {
 		}
 		return $result;
 	}
-
-
 
 	/** Считывание и обработка данных из файла
 	 * @param string $file_name Имя файла
@@ -51,8 +45,6 @@ class registry_cmd_get_data_from_file_evn implements _inf\inf_registry_cmd {
 		}
 		return $result;
 	}
-
-
 
 /**/
 }

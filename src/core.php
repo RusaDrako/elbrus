@@ -2,8 +2,6 @@
 
 namespace Elbrus\Framework;
 
-
-
 /** Загрузка ядра
  * Класс загружается в единственном экземпляре
  * @author Петухов Леонид <rusadrako@yandex.ru>
@@ -18,10 +16,6 @@ class core implements _inf\inf_core_con /**/{
 	 * @var object $_object
 	 */
 	private static $_object    = null;
-
-
-
-
 
 	/**
 	 * Конструктор объекта.
@@ -38,16 +32,8 @@ class core implements _inf\inf_core_con /**/{
 		}
 	}
 
-
-
-
-
 	/** Деструктор класса */
 	public function __destruct() {}
-
-
-
-
 
 	/** */
 	public static function call(...$args) {
@@ -57,10 +43,6 @@ class core implements _inf\inf_core_con /**/{
 		}
 		return static::$_object;
 	}
-
-
-
-
 
 	/** Осуществляет вызов команды
 	 * @param string $class_name Имя класса команды.
@@ -75,18 +57,10 @@ class core implements _inf\inf_core_con /**/{
 //		return $cmd->get_status();
 	}
 
-
-
-
-
 	/**/
 	public function get_cmd() {
 		return $this->_obj_last_cmd;
 	}
-
-
-
-
 
 /**/
 }

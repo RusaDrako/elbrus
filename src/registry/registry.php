@@ -2,8 +2,6 @@
 
 namespace Elbrus\Framework\registry;
 
-
-
 /**
  * @author Петухов Леонид <rusadrako@yandex.ru>
  * @package core
@@ -22,25 +20,13 @@ class registry {
 	 */
 	private static $_object    = null;
 
-
-
-
-
 	/** Конструктор объекта
 	 * Приватный, т.к. требуется создавать только один объект класса
 	 */
 	private function __construct() {}
 
-
-
-
-
 	/** Деструктор класса */
 	public function __destruct() {}
-
-
-
-
 
 	/** */
 	public function __debugInfo() {
@@ -55,10 +41,6 @@ class registry {
 		return $result;
 	}
 
-
-
-
-
 	/** */
 	public static function call(...$args) {
 		# Работаем через static а не через self, что бы получать объект вызывающего класса
@@ -67,10 +49,6 @@ class registry {
 		}
 		return static::$_object;
 	}
-
-
-
-
 
 	/** Заполняет массив ключей данными полученными из скласса команды (массив)
 	 * @param string $name Имя класса комманды
@@ -92,10 +70,6 @@ class registry {
 		}
 	}
 
-
-
-
-
 	/** Заполняет/обновляет ключ регистра
 	 * @param string $key Ключ регистра
 	 * @param string/bool/int $value Значение регистра
@@ -113,10 +87,6 @@ class registry {
 		return true;
 	}
 
-
-
-
-
 	/** Возвращает ключ регистра
 	 * @param string $key Ключ регистра
 	 * @param string/bool/int/null $default Значение по умолчанию (null)
@@ -128,10 +98,6 @@ class registry {
 		}
 		return $default;
 	}
-
-
-
-
 
 /**/
 }

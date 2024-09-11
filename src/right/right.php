@@ -2,8 +2,6 @@
 
 namespace Elbrus\Framework\right;
 
-
-
 /**
  * @author Петухов Леонид <rusadrako@yandex.ru>
  * @package core
@@ -20,35 +18,16 @@ class right {
 
 
 
-
-
-
-
-
-
-
 	/** Конструктор объекта */
 	private function __construct() {}
 
-
-
-
-
 	/** Деструктор класса */
 	public function __destruct() {}
-
-
-
-
 
 	/** Вывод объекта в строковом виде */
 	public function __debugInfo() {
 		return ['right' => $this->_right, 'lock' => $this->_lock];
 	}
-
-
-
-
 
 	/** Вызов объекта
 	* @return object Объект модели
@@ -59,10 +38,6 @@ class right {
 		}
 		return self::$_object;
 	}
-
-
-
-
 
 	/** Добавляет правило доступа
 	 * @param string $key Ключ правила доступа
@@ -79,10 +54,6 @@ class right {
 		}
 	}
 
-
-
-
-
 	/** Добавляет массив правил доступа (без блокирования)
 	 * @param array $array Массив правил доступа
 	 * @param string|function $value Алгоритмическое описание правила
@@ -94,10 +65,6 @@ class right {
 		}
 	}
 
-
-
-
-
 	/** Добавляет правило доступа
 	 * @param string $key Ключ правила доступа
 	 * @param string|function $value Алгоритмическое описание правила
@@ -107,10 +74,6 @@ class right {
 	public function right($key, $value, $lock = false) {
 		$this->_add_right($key, $value, $lock);
 	}
-
-
-
-
 
 	/** Проверяет ключ на массив
 	 * @param array|string $key Ключ правила доступа
@@ -125,10 +88,6 @@ class right {
 		}
 		return $key;
 	}
-
-
-
-
 
 	/** Проверяет на разрешение доступа указанным группам
 	 * @param array|string $key Ключ правила доступа
@@ -154,10 +113,6 @@ class right {
 		return false;
 	}
 
-
-
-
-
 	/** Проверяет на отказ в доступе указанным группам
 	 * @param array|string $key Ключ правила доступа
 	 * @return bool Результат проверки
@@ -165,10 +120,6 @@ class right {
 	public function access_denied($key) {
 		return !$this->access($key);
 	}
-
-
-
-
 
 	/** Проверяет на разрешение доступа всем кроме указанных групп
 	 * @param array|string $key Ключ правила доступа
@@ -178,10 +129,6 @@ class right {
 		return $this->access_denied($key);
 	}
 
-
-
-
-
 	/** Проверяет на отказ в доступе всем кроме указанных групп
 	 * @param array|string $key Ключ правила доступа
 	 * @return bool Результат проверки
@@ -189,10 +136,6 @@ class right {
 	public function access_denied_except($key) {
 		return $this->access($key);
 	}
-
-
-
-
 
 /**/
 }
