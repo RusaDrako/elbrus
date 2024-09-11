@@ -7,7 +7,7 @@ namespace Elbrus\Framework;
 
 
 /** Команда на загрузку базового шаблонизатора
- * @author Петухов Леонид <l.petuhov@okonti.ru>
+ * @author Петухов Леонид <rusadrako@yandex.ru>
  * @package core
  */
 class core_cmd_view implements _inf\inf_core_cmd {

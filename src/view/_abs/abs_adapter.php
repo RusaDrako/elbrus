@@ -5,7 +5,7 @@ namespace Elbrus\Framework\view\_abs;
 
 
 /**
- * @author Петухов Леонид <l.petuhov@okonti.ru>
+ * @author Петухов Леонид <rusadrako@yandex.ru>
  * @package core
  */
 abstract class abs_adapter {

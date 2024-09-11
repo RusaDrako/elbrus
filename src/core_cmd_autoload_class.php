@@ -7,7 +7,7 @@ namespace Elbrus\Framework;
 
 
 /**
- * @author Петухов Леонид <l.petuhov@okonti.ru>
+ * @author Петухов Леонид <rusadrako@yandex.ru>
  * @package core
  */
 class core_cmd_autoload_class implements _inf\inf_core_cmd {

@@ -30,7 +30,7 @@ class registry_cmd_get_data_from_file_evn implements _inf\inf_registry_cmd {
 	private function _file_read($file_name) {
 		$result = [];
 		if ($handle = fopen($file_name, "r")) {
-			while (($buffer = fgets($handle, 1024)) !== false) {
+			while (($buffer = fgets($handle)) !== false) {
 				$arr_buffer = explode('#', $buffer);
 				$arr_key_val = explode('=', $arr_buffer[0]);
 				if (count($arr_key_val) > 1) {

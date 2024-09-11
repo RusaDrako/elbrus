@@ -9,7 +9,7 @@ namespace Elbrus\Framework\print_data;
 /** <b>Печать сообщений v 1.0.0</b>
  * @version 1.0.0
  * @created 2020-01-23
- * @author Петухов Леонид <l.petuhov@okonti.ru>
+ * @author Петухов Леонид <rusadrako@yandex.ru>
  */
 class print_data {
 

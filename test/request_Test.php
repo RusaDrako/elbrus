@@ -9,7 +9,7 @@ require_once(__DIR__ . '/../src/request/autoload.php');
 
 
 /** Класс-тестировщик для request
- * @author Петухов Леонид <l.petuhov@okonti.ru>
+ * @author Петухов Леонид <rusadrako@yandex.ru>
  */
 class request_Test extends TestCase {
 	/** Тестируемый объект */

@@ -5,7 +5,7 @@ namespace Elbrus\Framework\request;
 
 
 /**
- * @author Петухов Леонид <l.petuhov@okonti.ru>
+ * @author Петухов Леонид <rusadrako@yandex.ru>
  * @package core
  */
 class request {
